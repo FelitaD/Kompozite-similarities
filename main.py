@@ -17,7 +17,7 @@ def load_data():
 def all_brands_similarities(brands_1, brands_2):
     concatenated_df = pd.DataFrame()
 
-    for i in range(len(brands_1)):
+    for i in range(len(brands_1[:50])):
         brand_df = combine_similarities(brands_1[i], brands_2)
 
         concatenated_df = pd.concat([concatenated_df, brand_df], ignore_index=True)
@@ -26,7 +26,7 @@ def all_brands_similarities(brands_1, brands_2):
 
 
 def export_to_csv(df):
-    df.to_csv('brands_similarities.csv', index=False)
+    df.to_csv('brands_similarities-50.csv', index=False)
 
 
 if __name__ == '__main__':
